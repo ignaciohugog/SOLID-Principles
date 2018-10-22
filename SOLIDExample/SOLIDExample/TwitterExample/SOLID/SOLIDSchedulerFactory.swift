@@ -9,19 +9,19 @@
 import Foundation
 
 struct SOLIDSchedulerFactory {
-    
-    static func twitterServiceSchedulerWithUserID(userID: String) -> ServiceScheduler {
+
+    static func twitterServiceSchedulerWith(userID: String) -> ServiceScheduler {
         let timer = clockTimer()
         var twitterScheduler = SOLIDServiceScheduler(timer: timer)
-        
-        twitterScheduler.registerService(SOLIDServiceFactory.twitterTimelineServiceWithUserID(userID))
-        twitterScheduler.registerService(SOLIDServiceFactory.twitterProfileServiceWithUserID(userID))
-        
+
+        twitterScheduler.registerService(SOLIDServiceFactory.twitterTimelineServiceWith(userID))
+        twitterScheduler.registerService(SOLIDServiceFactory.twitterProfileServiceWith(userID))
+
         return twitterScheduler
     }
-    
-    static func clockTimer() -> Timer {
+
+    static func clockTimer() -> Timeable {
         return SOLIDTimer()
     }
-    
+
 }

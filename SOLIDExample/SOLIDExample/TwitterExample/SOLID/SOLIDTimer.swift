@@ -8,11 +8,11 @@
 
 import Foundation
 
-class SOLIDTimer: Timer {
-    
-    private var internalTimer: NSTimer?
+class SOLIDTimer: Timeable {
+
+    private var internalTimer: Timer?
     private var tick: Int
-    private var tickAction: (Int -> ())?
+    private var tickAction: ((Int) -> ())?
     
     init() {
         self.internalTimer = nil
@@ -22,14 +22,18 @@ class SOLIDTimer: Timer {
     
     // MARK: - Protocol conformance
     
-    // MARK: Timer
+    // MARK: Timeable
     
-    func onTick(action: Int -> ()) {
+    func onTick(action: @escaping (Int) -> ()) {
         tickAction = action
     }
     
     func start() {
-        internalTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerDidFire:", userInfo: nil, repeats: true)
+        internalTimer = Timer.scheduledTimer(timeInterval: 1.0,
+                                             target: self,
+                                             selector:#selector(timerDidFire),
+                                             userInfo: nil,
+                                             repeats: true)
     }
     
     func stop() {
@@ -39,8 +43,8 @@ class SOLIDTimer: Timer {
     
     // MARK: - Private methods
     
-    @objc private func timerDidFire(timer: NSTimer) {
-        tick++
+    @objc private func timerDidFire(timer: Timer) {
+        tick+=1
         
         tickAction?(tick)
     }

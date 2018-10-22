@@ -10,12 +10,12 @@ import Foundation
 
 class NotSOLIDSquare: NotSOLIDRectangle {
     
-    override func setHeight(value: Double) {
+    override func setHeight(_ value: Double) {
         myHeight = value
         myWidth = value
     }
     
-    override func setWidth(value: Double) {
+    override func setWidth(_ value: Double) {
         myWidth = value
         myHeight = value
     }

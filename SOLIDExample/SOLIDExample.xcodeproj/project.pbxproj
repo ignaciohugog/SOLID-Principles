@@ -33,7 +33,7 @@
 		2F7301831C4579C4009932F8 /* NotSOLIDTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7301821C4579C4009932F8 /* NotSOLIDTimelineService.swift */; };
 		2F7301851C4579DF009932F8 /* NotSOLIDProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7301841C4579DF009932F8 /* NotSOLIDProfileService.swift */; };
 		2F73018B1C457AF1009932F8 /* SOLIDServiceScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73018A1C457AF1009932F8 /* SOLIDServiceScheduler.swift */; };
-		2F73018D1C458C98009932F8 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73018C1C458C98009932F8 /* Timer.swift */; };
+		2F73018D1C458C98009932F8 /* Timeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73018C1C458C98009932F8 /* Timeable.swift */; };
 		2F73018F1C458CCD009932F8 /* SOLIDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73018E1C458CCD009932F8 /* SOLIDTimer.swift */; };
 		2F7301911C458D0C009932F8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7301901C458D0C009932F8 /* Service.swift */; };
 		2F7301931C458F86009932F8 /* SOLIDTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7301921C458F86009932F8 /* SOLIDTimelineService.swift */; };
@@ -44,6 +44,18 @@
 		2F73019D1C45906A009932F8 /* SOLIDClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73019C1C45906A009932F8 /* SOLIDClient.swift */; };
 		2F73019F1C459105009932F8 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73019E1C459105009932F8 /* Client.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		848DD865217D3E4200A79931 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		2F73016E1C4575D2009932F8 /* PBXContainerItemProxy */ = {
@@ -86,7 +98,7 @@
 		2F7301821C4579C4009932F8 /* NotSOLIDTimelineService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotSOLIDTimelineService.swift; sourceTree = "<group>"; };
 		2F7301841C4579DF009932F8 /* NotSOLIDProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotSOLIDProfileService.swift; sourceTree = "<group>"; };
 		2F73018A1C457AF1009932F8 /* SOLIDServiceScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOLIDServiceScheduler.swift; sourceTree = "<group>"; };
-		2F73018C1C458C98009932F8 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		2F73018C1C458C98009932F8 /* Timeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeable.swift; sourceTree = "<group>"; };
 		2F73018E1C458CCD009932F8 /* SOLIDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOLIDTimer.swift; sourceTree = "<group>"; };
 		2F7301901C458D0C009932F8 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2F7301921C458F86009932F8 /* SOLIDTimelineService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOLIDTimelineService.swift; sourceTree = "<group>"; };
@@ -234,9 +246,9 @@
 			isa = PBXGroup;
 			children = (
 				2F73019A1C45902A009932F8 /* NotSOLIDClient.swift */,
-				2F7301801C457796009932F8 /* NotSOLIDServiceScheduler.swift */,
 				2F7301821C4579C4009932F8 /* NotSOLIDTimelineService.swift */,
 				2F7301841C4579DF009932F8 /* NotSOLIDProfileService.swift */,
+				2F7301801C457796009932F8 /* NotSOLIDServiceScheduler.swift */,
 			);
 			path = NotSOLID;
 			sourceTree = "<group>";
@@ -245,15 +257,15 @@
 			isa = PBXGroup;
 			children = (
 				2F73019C1C45906A009932F8 /* SOLIDClient.swift */,
+				2F7301981C458FF2009932F8 /* SOLIDSchedulerFactory.swift */,
+				2F5BCA6B1C485B2E004EB7E6 /* ServiceScheduler.swift */,
 				2F73018A1C457AF1009932F8 /* SOLIDServiceScheduler.swift */,
 				2F7301921C458F86009932F8 /* SOLIDTimelineService.swift */,
 				2F7301941C458FA0009932F8 /* SOLIDProfileService.swift */,
 				2F73018E1C458CCD009932F8 /* SOLIDTimer.swift */,
-				2F7301981C458FF2009932F8 /* SOLIDSchedulerFactory.swift */,
 				2F7301961C458FCA009932F8 /* SOLIDServiceFactory.swift */,
-				2F5BCA6B1C485B2E004EB7E6 /* ServiceScheduler.swift */,
 				2F7301901C458D0C009932F8 /* Service.swift */,
-				2F73018C1C458C98009932F8 /* Timer.swift */,
+				2F73018C1C458C98009932F8 /* Timeable.swift */,
 			);
 			path = SOLID;
 			sourceTree = "<group>";
@@ -270,6 +282,7 @@
 				2F7301571C4575D2009932F8 /* Resources */,
 			);
 			buildRules = (
+				848DD865217D3E4200A79931 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -368,7 +381,7 @@
 				2F5BCA711C485E93004EB7E6 /* NotSOLIDRectangle.swift in Sources */,
 				2F5BCA901C487210004EB7E6 /* SOLIDATM.swift in Sources */,
 				2F7301831C4579C4009932F8 /* NotSOLIDTimelineService.swift in Sources */,
-				2F73018D1C458C98009932F8 /* Timer.swift in Sources */,
+				2F73018D1C458C98009932F8 /* Timeable.swift in Sources */,
 				2F7301971C458FCA009932F8 /* SOLIDServiceFactory.swift in Sources */,
 				2F5BCA961C4962DB004EB7E6 /* Transaction.swift in Sources */,
 				2F7301951C458FA0009932F8 /* SOLIDProfileService.swift in Sources */,
@@ -473,6 +486,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -509,6 +523,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

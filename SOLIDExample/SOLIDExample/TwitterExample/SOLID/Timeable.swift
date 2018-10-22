@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol Timer {
+protocol Timeable {
     
-    func onTick(action: Int -> ())
+    func onTick(action: @escaping (Int) -> ())
     func start()
     func stop()
     

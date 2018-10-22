@@ -27,12 +27,12 @@ struct SOLIDTimelineService: Service {
     }
     
     func execute() {
-        fetchTimelineForUserID(userID)
+        fetchTimelineFor(userID)
     }
     
     // MARK: - Private methods
     
-    private func fetchTimelineForUserID(userID: String) {
+    private func fetchTimelineFor(_ userID: String) {
         print("[SOLID] fetched timeline for user \(userID)")
     }
     

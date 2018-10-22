@@ -9,23 +9,23 @@
 import Foundation
 
 struct NotSOLIDConsoleATM: NotSOLIDATM {
-    
+
     // MARK: - Protocol conformance
-    
+
     // MARK: ATM
-    
+
     func requestDepositAmount() {
         print("[Not SOLID] Requested deposit")
     }
-    
+
     func requestWithdrawalAmount() {
         print("[Not SOLID] Requested withdrawal")
     }
-    
+
     func requestTransfer() {
         print("[Not SOLID] Requested Transfer")
     }
-    
+
     func informInsufficientFunds() {
         print("[Not SOLID] Insufficient funds!")
     }

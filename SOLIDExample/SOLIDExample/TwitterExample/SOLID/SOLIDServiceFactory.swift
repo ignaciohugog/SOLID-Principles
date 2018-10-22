@@ -10,11 +10,11 @@ import Foundation
 
 struct SOLIDServiceFactory {
     
-    static func twitterTimelineServiceWithUserID(userID: String) -> Service {
+    static func twitterTimelineServiceWith(_ userID: String) -> Service {
         return SOLIDTimelineService(frequency: 1, userID: userID)
     }
     
-    static func twitterProfileServiceWithUserID(userID: String) -> Service {
+    static func twitterProfileServiceWith(_ userID: String) -> Service {
         return SOLIDProfileService(frequency: 2, userID: userID)
     }
     

@@ -12,15 +12,15 @@ struct SOLIDServiceScheduler: ServiceScheduler {
     
     // MARK: - Public methods
     
-    let timer: Timer
+    let timer: Timeable
     private var services: [Service]
     
-    init(timer: Timer) {
+    init(timer: Timeable) {
         self.timer = timer
         self.services = []
     }
     
-    mutating func registerService(service: Service) {
+    mutating func registerService(_ service: Service) {
         services.append(service)
     }
     
@@ -40,19 +40,17 @@ struct SOLIDServiceScheduler: ServiceScheduler {
     
     // MARK: - Private methods
     
-    private func timerDidTick(tick: Int) {
+    private func timerDidTick(_ tick: Int) {
         runServicesWithTick(tick)
     }
     
-    private func runServicesWithTick(tick: Int) {
-        for service in services {
-            if (shouldExecuteFrequency(service.frequency(), onTick:tick)) {
-                service.execute()
-            }
+    private func runServicesWithTick(_ tick: Int) {
+        for service in services where shouldExecuteFrequency(service.frequency(), onTick:tick) {
+            service.execute()
         }
     }
-    
-    private func shouldExecuteFrequency(frequency: Int, onTick tick: Int) -> Bool {
+
+    private func shouldExecuteFrequency(_ frequency: Int, onTick tick: Int) -> Bool {
         return (tick % frequency) == 0
     }
     

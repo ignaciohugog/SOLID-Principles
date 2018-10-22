@@ -9,28 +9,28 @@
 import Foundation
 
 class NotSOLIDRectangle {
-    
+
     internal var myHeight: Double = 0
     internal var myWidth: Double = 0
-    
-    func setHeight(value: Double) {
+
+    func setHeight(_ value: Double) {
         myHeight = value
     }
-    
-    func setWidth(value: Double) {
+
+    func setWidth(_ value: Double) {
         myWidth = value
     }
-    
+
     func height() -> Double {
         return myHeight
     }
-    
+
     func width() -> Double {
         return myWidth
     }
-    
+
     func area() -> Double {
         return self.height() * self.width()
     }
-    
+
 }

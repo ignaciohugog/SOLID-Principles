@@ -9,10 +9,10 @@
 import Foundation
 
 struct SOLIDClient: Client {
-    
+
     func startScheduler() {
-        let serviceScheduler = SOLIDSchedulerFactory.twitterServiceSchedulerWithUserID("123")
-        
+        let serviceScheduler = SOLIDSchedulerFactory.twitterServiceSchedulerWith(userID: "123")
+
         serviceScheduler.start()
     }
     

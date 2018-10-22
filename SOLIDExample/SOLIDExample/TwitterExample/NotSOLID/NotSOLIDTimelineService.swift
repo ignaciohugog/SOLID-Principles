@@ -10,7 +10,7 @@ import Foundation
 
 struct NotSOLIDTimelineService {
     
-    static func fetchTimelineForUserID(userID: String) {
+    static func fetchTimelineFor(userID: String) {
         print("[Not SOLID] fetched timeline for user \(userID)")
     }
     

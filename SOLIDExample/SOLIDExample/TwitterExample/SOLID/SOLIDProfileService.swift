@@ -26,12 +26,12 @@ struct SOLIDProfileService: Service {
     }
     
     func execute() {
-        self.fetchProfileForUserID(userID)
+        self.fetchProfileFor(userID)
     }
     
     // MARK: - Private methods
     
-    private func fetchProfileForUserID(userID: String) {
+    private func fetchProfileFor(_ userID: String) {
         print("[SOLID] fetched profile for user \(userID)")
     }
     
